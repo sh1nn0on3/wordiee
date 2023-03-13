@@ -1,0 +1,11 @@
+.board {
+  color: white;
+  height: 300px;
+  width: 300px;
+  margin-bottom: 2em;
+  align-self: center;
+  justify-content: center;
+  background-color: var(--color-dark-green);
+  display: grid;
+  grid-template-columns: repeat(5, 0fr);
+}

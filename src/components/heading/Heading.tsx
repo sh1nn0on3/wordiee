@@ -1,5 +1,5 @@
 import React from "react";
-import "./heading.css"
+import "./heading.scss"
 
 interface Prop {
   type: string;
