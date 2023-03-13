@@ -1,4 +1,5 @@
 import React from "react";
+import "./heading.css"
 
 interface Prop {
   type: string;
