@@ -1,11 +1,12 @@
-.board {
+.board{
   color: white;
   height: 300px;
   width: 300px;
-  margin-bottom: 2em;
   align-self: center;
   justify-content: center;
   background-color: var(--color-dark-green);
   display: grid;
+  column-gap: 0.25em;
   grid-template-columns: repeat(5, 0fr);
+  margin-bottom:2em;
 }
