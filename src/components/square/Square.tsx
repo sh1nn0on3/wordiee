@@ -1,5 +1,5 @@
 import React from "react";
-import "./square.scss"
+import "./square.scss";
 
 interface IProps {
   val: string;
@@ -7,7 +7,7 @@ interface IProps {
 }
 
 const Square: React.FC<IProps> = (props) => {
-  const { val, index } = props;
+  const { val } = props;
   return (
     <>
       <div className="square">{val} </div>

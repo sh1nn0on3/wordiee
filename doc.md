@@ -40,3 +40,9 @@
                   - muốn in hoa thì .toUpperCase()
                 - tạo folder Key.tsx
                   - nhận giá trị letter và css
+
+<!-- nhấn vào key  -->
++ key 
+  + onClick trong letter (chooseLetter)
+  + const chooseLetter 
+  

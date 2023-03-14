@@ -1,7 +1,7 @@
 import "./App.scss";
 import Board from "./components/board/Board";
 import Heading from "./components/heading/Heading";
-import React ,  {useState} from "react";
+import {useState} from "react";
 
 
 function App() {
