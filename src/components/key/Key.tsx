@@ -8,7 +8,7 @@ interface IProps {
 
 const Key: React.FC<IProps> = (props) => {
   const { letter } = props;
-  return <div className="letter">{letter} </div>;
+  return <div className="letter">{letter}</div>;
 };
 
 export default Key;
