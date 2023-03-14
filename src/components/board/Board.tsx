@@ -1,6 +1,7 @@
 import React from "react";
 import "./board.scss";
 import Square from "../square/Square";
+import KeyBoard from "../keyboard/KeyBoard";
 
 interface IProps {
   board: string[];
@@ -20,7 +21,7 @@ const Board: React.FC<IProps> = (prop) => {
         })}
       </div>
       <div className="keyboard">
-        
+        <KeyBoard />
       </div>
     </>
   );
