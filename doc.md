@@ -13,6 +13,7 @@
       - h1 : fs , fw , align
 
 <!-- board -->
+
 - Tạo board
   - App :
     - tạo div .board-container
@@ -42,7 +43,41 @@
                   - nhận giá trị letter và css
 
 <!-- nhấn vào key  -->
-+ key 
-  + onClick trong letter (chooseLetter)
-  + const chooseLetter 
-  
+
+<< sử dụng redux cũng như useContext -- truyền giá trị vào global state >>
+
+- key
+
+  - onClick trong letter (chooseLetter)
+  - const chooseLetter
+    ? dùng useContext được k ? demo thử trước
+
+    - hướng dùng về redux < 42:48 > tạo folder redux
+      <!-- -boardSlice.ts -->
+
+      - export const boardSlice = createSlice({ name | initial | reducer })
+        - name : " board "
+        - gọi ở ngoài initialState = { board : [ mảng board lấy từ App(board) ] }
+        - reducers : { }
+          - setBoard : ( state , action ) => { state.board = action.payload }
+      - export const { setBoard } = boardSlice.actions;
+      - export default boardSlice.reducer
+      <!-- - store.ts -->
+      - import { configureStore } from "@redux/toolkit"
+      - export configureStore { ... reducer:{} }
+        - boardReducer -- đặt trong boardSlice.ts
+        - reducer : { board : boardReducer }
+        <!-- Warp Provider trong index.tsx -->
+      - import { Provider } from " react-redux "
+      - import store from " ./redux/store"
+      - Wrap
+        - Provider store = { store }
+
+        <!-- App.tsx -->
+      <!-- - tạo interface.ts -->
+        - interface boardState { board : string[] }
+        - export interface rootState { board : boardState }
+      - useSeletor
+        - import useSeletor from " react-redux "
+        - const board = useSeletor( (state.rootState) => state.board.board )
+
