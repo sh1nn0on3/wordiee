@@ -9,6 +9,7 @@ const initialState = {
     "" , "" , "" , "" , "" ,
     "" , "" , "" , "" , "" 
   ],
+  pos: 0 
 };
 
 export const boardSlice = createSlice({
@@ -18,9 +19,15 @@ export const boardSlice = createSlice({
     setBoard: (state, action) => {
       state.board = action.payload;
     },
+    incPos : (state) => {
+        state.pos = state.pos + 1 ;
+    },
+    decPos : (state) => {
+        state.pos = state.pos - 1 ;
+    }
   },
 });
 
-export const { setBoard } = boardSlice.actions;
+export const { setBoard , incPos , decPos} = boardSlice.actions;
 
 export default boardSlice.reducer;

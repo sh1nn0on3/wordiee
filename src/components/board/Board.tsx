@@ -12,12 +12,12 @@ const Board: React.FC<IProps> = (prop) => {
   return (
     <>
       <div className="board">
-        {board.map((square , index) => {
-            return (
-                <div className="square">
-                    <Square val={square} index={index} />
-                </div>
-            )
+        {board.map((square, index) => {
+          return (
+            <div className="square" key={index}>
+              <Square val={square} index={index} key={index} />
+            </div>
+          );
         })}
       </div>
       <div className="keyboard">
