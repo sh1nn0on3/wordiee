@@ -1,7 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  board: [],
+  board: [
+    "" , "" , "" , "" , "" ,
+    "" , "" , "" , "" , "" ,
+    "" , "" , "" , "" , "" ,
+    "" , "" , "" , "" , "" ,
+    "" , "" , "" , "" , "" ,
+    "" , "" , "" , "" , "" 
+  ],
 };
 
 export const boardSlice = createSlice({
