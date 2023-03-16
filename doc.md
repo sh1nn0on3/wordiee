@@ -71,13 +71,41 @@
       - import { Provider } from " react-redux "
       - import store from " ./redux/store"
       - Wrap
+
         - Provider store = { store }
 
-        <!-- App.tsx -->
-      <!-- - tạo interface.ts -->
+            <!-- App.tsx -->
+          <!-- - tạo interface.ts -->
+
         - interface boardState { board : string[] }
         - export interface rootState { board : boardState }
+
       - useSeletor
         - import useSeletor from " react-redux "
         - const board = useSeletor( (state.rootState) => state.board.board )
 
+<!-- ******* Part 2  ******** -->
+
+- Animation
+
+  - add vào Square.tsx
+    - import { motion }
+    - wrap vào ...
+      - motion.div animate = { val ? filled : unfilled } variants = { ... variants }
+        - tạo const variants = { ... }
+          - filled : () => { scale | transition }
+          - unfilled : () => { scale | transition }
+
+- Logic Enter xuống dòng
+  - chia làm 5 hàng < dùng hàm làm tròn math.floor >
+  - setUp :
+    - boardSlice.tsx : add
+      - row : 0 | key : ""
+      - incRow : ( state ) => { state.row++ }
+      - setKey : ( state , action ) => { state.key = action.payload }
+      - export
+    - vào interface add row | key
+  - key.tsx 
+    - let currentRow = math.floor(...) || const row = 
+    - trong chooseLetter 
+      - if ( currentRow > row ) return ;
