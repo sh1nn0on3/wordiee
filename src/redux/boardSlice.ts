@@ -9,7 +9,9 @@ const initialState = {
     "" , "" , "" , "" , "" ,
     "" , "" , "" , "" , "" 
   ],
-  pos: 0 
+  pos: 0 ,
+  row : 0 ,
+  correctWord : "STATE" , 
 };
 
 export const boardSlice = createSlice({
@@ -24,10 +26,16 @@ export const boardSlice = createSlice({
     },
     decPos : (state) => {
         state.pos = state.pos - 1 ;
-    }
+    },
+    incRow : (state) => {
+        state.row++
+    },
+    // corWord : (state) => {
+
+    // }
   },
 });
 
-export const { setBoard , incPos , decPos} = boardSlice.actions;
+export const { setBoard , incPos , decPos , incRow} = boardSlice.actions;
 
 export default boardSlice.reducer;

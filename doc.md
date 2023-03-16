@@ -105,7 +105,36 @@
       - setKey : ( state , action ) => { state.key = action.payload }
       - export
     - vào interface add row | key
-  - key.tsx 
-    - let currentRow = math.floor(...) || const row = 
-    - trong chooseLetter 
+  - key.tsx
+    - let currentRow = math.floor(...) || const row =
+    - trong chooseLetter
       - if ( currentRow > row ) return ;
+  - keyboard.tsx
+    - handleEnter() => { ... }
+      - if (possition % 5 === 0 && possition !== 0 ) { ... }
+        - dispatch(incRow())
+    - handleBack () => { ... }
+      - chặn xóa dòng dưới
+      - if( Math.floor(( possition - 1 ) / 5 ) < row ) return ;
+
+- boardSlice.tsx
+    - add correctWord : " ... " < điền vào là từ cần tìm >
+    - thêm lại vào interface.ts
+  - square.tsx
+    - lấy correctWord || position từ redux và truyền từ interface
+    <!-- tạo các ô màu như lỗi, đúng , gần đúng -->
+    - tạo useState
+      - corrent <boolean> false // ô đúng
+      - almost <boolean> false // ô gần đúng
+      - wrong <boolean> false // ô sai
+      <!-- check từ  --> 
+    - let currentPos = ( logic số thứ tự )  < wordLastIndex = 4 >
+      - ex <
+        position === 5
+        ? wordLastIndex
+        : position > 5 && position % 5 === 0
+        ? wordLastIndex
+        : (position % 5 ) - 1
+        > < (position - 1 ) % 5 >
+    - dùng useEffect(() => {} , [ val ])
+ 
