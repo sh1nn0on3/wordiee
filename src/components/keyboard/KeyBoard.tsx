@@ -9,19 +9,22 @@ const KeyBoard: React.FC = () => {
   const board = useSelector((state: rootState) => state.board.board);
   const possition = useSelector((state: rootState) => state.board.pos);
   const row = useSelector((state: rootState) => state.board.row);
-  const currentRow = Math.floor((possition - 1) / 5 )
+  const currentRow = Math.floor((possition - 1) / 5);
+  const enterRow = Math.floor((possition - 1) / 5);
+  const dispatch = useDispatch();
   // console.log("row:", row)
   // console.log("currentRow:", currentRow)
-  const dispatch = useDispatch();
 
   const handleEnter = () => {
-    if (possition % 5 === 0) {
-      dispatch(incRow());
+    if (possition % 5 === 0 && possition !== 0) {
+      if (currentRow >= row) {
+        dispatch(incRow());
+      }
     }
   };
 
   const handleBack = () => {
-    if (currentRow >= row ) {
+    if (currentRow >= row) {
       if (possition <= 0) return;
       const newBoard = [...board];
       dispatch(decPos());
